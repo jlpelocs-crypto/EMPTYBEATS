@@ -27,7 +27,7 @@ fi
 
 echo "Upgrading pip and installing packages inside venv..."
 "$PY" -m pip install --upgrade pip
-"$PY" -m pip install customtkinter psutil
+"$PY" -m pip install -r "$DIR/requirements.txt"
 
 echo "Running Gaming Hub..."
 exec "$PY" "$DIR/gaming_hub.py"

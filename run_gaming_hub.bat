@@ -22,5 +22,5 @@ if not exist "%SCRIPT_DIR%venv\Scripts\python.exe" (
 
 call "%SCRIPT_DIR%venv\Scripts\activate.bat"
 python -m pip install --upgrade pip >nul
-python -m pip install customtkinter psutil >nul
+python -m pip install -r "%SCRIPT_DIR%requirements.txt" >nul
 python "%SCRIPT_DIR%gaming_hub.py"

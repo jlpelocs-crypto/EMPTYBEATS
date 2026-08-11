@@ -24,17 +24,28 @@ import platform
 import shutil
 from datetime import datetime
 
+# Auto-install missing Python dependencies if needed.
+_missing_python_packages = []
 try:
     import customtkinter as ctk
-except Exception as e:
-    print("Missing dependency: customtkinter. Install with `pip install customtkinter`.")
-    raise
+except ImportError:
+    _missing_python_packages.append("customtkinter")
 
 try:
     import psutil
-except Exception:
-    print("Missing dependency: psutil. Install with `pip install psutil`.")
-    raise
+except ImportError:
+    _missing_python_packages.append("psutil")
+
+if _missing_python_packages:
+    try:
+        print("Installing missing Python packages:", " ".join(_missing_python_packages))
+        subprocess.check_call([sys.executable, "-m", "pip", "install", *[_missing_python_packages]])
+    except Exception as e:
+        print("Failed to automatically install Python dependencies:", e)
+        raise
+
+    import customtkinter as ctk
+    import psutil
 
 from tkinter import messagebox
 
