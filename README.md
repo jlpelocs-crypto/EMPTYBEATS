@@ -6,8 +6,30 @@ About
 
 Gaming Hub is a lightweight desktop utility for optimizing Android tablet performance and mirroring device screens using `adb` and `scrcpy`. It provides simple controls for boosting device settings, recording gameplay locally or on-device, and managing low-end laptop workflows on Linux and Windows.
 
-Setup
------
+Quick Install (Recommended) 🚀
+------------------------------
+
+### For Linux:
+```bash
+chmod +x install_linux.sh
+./install_linux.sh
+```
+
+### For Windows:
+```cmd
+install_windows.bat
+```
+
+The installers will automatically:
+- ✅ Install Python dependencies
+- ✅ Create a virtual environment
+- ✅ Create desktop shortcuts
+- ✅ Set up the app for easy access
+
+📖 **See [INSTALL.md](INSTALL.md) for detailed installation instructions**
+
+Setup (Manual)
+--------------
 
 1. Install system Tk (needed by tkinter):
 
